@@ -1,7 +1,14 @@
-<script type="text/javascript">
-  <!-- Begin
-  copyright=new Date(); //取得当前的日期
-  update=copyright.getFullYear(); //取得当前的年份
-  document.write("© Copyright 2019-"+ update + " All rights reserved. 迪龙科技");//update为自动更新的年份
-  // End -->
-</script>
+<?php
+error_reporting(0);
+$domain = 'baidu.com';//需要跳转的域名
+$host = $_SERVER['HTTP_HOST'];
+$dot1 = strpos($host,'.');
+$dot2 = strrpos($host,'.');
+if($dot1==$dot2){//一级域名
+header("Location: http://{$domain}");
+}else{//二级域名
+$attr = substr($host,0,$dot1);
+$location = $attr.'.'.$domain;
+header("Location: http://{$location}/");
+}
+exit;
